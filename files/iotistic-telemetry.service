@@ -1,5 +1,5 @@
 [Unit]
-Description=iotistic-mqtt service
+Description=iotistic-telemetry service
 After=network-online.target redis.service
 Wants=network-online.target
 Requires=redis.service
@@ -7,7 +7,7 @@ Requires=redis.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/iotistic-mqtt
+ExecStart=/usr/bin/iotistic-telemetry
 Restart=always
 RestartSec=10
 LimitNOFILE=10032
