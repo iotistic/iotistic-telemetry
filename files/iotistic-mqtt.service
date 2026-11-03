@@ -1,0 +1,17 @@
+[Unit]
+Description=iotistic-mqtt service
+After=network-online.target redis.service
+Wants=network-online.target
+Requires=redis.service
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/iotistic-mqtt
+Restart=always
+RestartSec=10
+LimitNOFILE=10032
+TimeoutStartSec=300
+
+[Install]
+WantedBy=multi-user.target
